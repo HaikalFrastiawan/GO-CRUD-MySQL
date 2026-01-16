@@ -22,7 +22,7 @@ func GetAll() []entities.Category {
 		err := rows.Scan(
 			&category.Id,
 			&category.Name,
-			&category.UpdateAt,
+			&category.UpdatedAt, 
 		)
 		if err != nil {
 			panic(err)
@@ -32,4 +32,23 @@ func GetAll() []entities.Category {
 	}
 
 	return categories
+}
+
+func Create(category entities.Category) bool {
+	result, err := config.DB.Exec(`
+		INSERT INTO categories (name, created_at, updated_at)
+		VALUES (?, ?, ?)`,
+		category.Name, category.CreatedAt,category.UpdatedAt,
+	)
+
+	if err != nil {
+		panic(err)
+	}
+
+	lastInsert, err := result.LastInsertId()
+	if err != nil {
+		panic(err)
+	}	
+
+	return lastInsert > 0
 }
