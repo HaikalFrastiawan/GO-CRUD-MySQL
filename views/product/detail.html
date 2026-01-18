@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GO Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-light" href="/">Go Product</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link active text-light"  href="/products">Product</a>
+            <a class="nav-link active text-light" href="/categories">Categories</a>
+        </div>
+        </div>
+    </div>
+    </nav>
+    <!-- Navbar akhir-->
+     <div class="container mt-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-4">
+      <h2>Detail Product</h2>
+      <hr>
+
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" value="{{ .product.Name }}" disabled>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input type="text" class="form-control" value="{{ .product.Category.Name }}" disabled>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Stock</label>
+        <input type="number" class="form-control" value="{{ .product.Stock }}" disabled>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" rows="3" disabled>{{ .product.Description }}</textarea>
+      </div>
+
+      <a href="/products" class="btn btn-secondary">Back</a>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+    
+        </div>
+        </div>
+        </form>
+  </body>
+</html>

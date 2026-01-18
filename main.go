@@ -7,6 +7,7 @@ import (
 	"go-web-native/controller/categorycontroller"
 	"go-web-native/controller/homecontroller"
 	"go-web-native/controller/productcontroller"
+	
 )
 
 func main() {
@@ -26,6 +27,7 @@ func main() {
 	http.HandleFunc("/products", productcontroller.Index)
 	http.HandleFunc("/products/add", productcontroller.Add)
 	http.HandleFunc("/products/edit", productcontroller.Edit)
+	http.HandleFunc("/products/detail", productcontroller.Detail)
 	http.HandleFunc("/products/delete", productcontroller.Delete)
 
 
